@@ -28,22 +28,22 @@ const Nav = () => {
           </button>
 
           {/* Navigation Links - Desktop */}
-          <div className="hidden lg:flex space-x-12 items-center">
-            <Link to="/aboutus" className="hover:text-gray-300">
+          <div className="hidden lg:flex space-x-12 text-lg items-center">
+            <Link to="/aboutus" className="">
               About Us
             </Link>
-            <Link to="/contactus" className="hover:text-gray-300">
+            <Link to="/contactus" className="">
               Contact Us
             </Link>
-            <a href="#blog" className="hover:text-gray-300">
+            <a href="#blog" className="">
               Blog
             </a>
-            <a href="#career" className="hover:text-gray-300">
+            <a href="#career" className="">
               Career
             </a>
-            <div className="flex items-center">
+           <div className="flex cursor-pointer items-center">
               <IoIosSearch className="text-xl" />
-              <a href="#search" className="hover:text-gray-300 pl-2">
+              <a href="#search" className=" pl-2">
                 Search
               </a>
             </div>

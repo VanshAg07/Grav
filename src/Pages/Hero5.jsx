@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { motion, useAnimation } from "framer-motion"; // Import framer-motion
+import { motion } from "framer-motion"; // Import framer-motion
+import { useInView } from "react-intersection-observer"; // Import IntersectionObserver hook
 import img from "../img/10.jpg";
 import img2 from "../img/11.jpg";
 import img3 from "../img/12.jpg";
@@ -47,14 +48,23 @@ const BusinessVerticals = () => {
     );
   };
 
+  // Intersection Observer hook
+  const { ref: sectionRef, inView } = useInView({
+    triggerOnce: false, // Trigger the animation once
+    threshold: 0.3, // Trigger when 50% of the section is in view
+  });
+
   return (
-    <section className="py-12 bg-gray-50">
+    <section
+      ref={sectionRef}
+      className="py-12 bg-gray-50"
+    >
       <div className="container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-start space-x-8">
         {/* Left Section with Heading and Paragraph */}
         <motion.div
           className="lg:w-1/4 mb-8 lg:mb-0"
-          initial={{ opacity: 0, x: -100 }} // Start off-screen to the left
-          animate={{ opacity: 1, x: 0 }} // Slide to the original position
+          initial={{ opacity: 0, y: -100 }} // Start off-screen from the top
+          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -100 }} // Trigger animation when in view
           transition={{ duration: 1.5, ease: "easeInOut" }} // Slower animation
         >
           <h1 className="text-4xl font-bold text-purple-700">Business Verticals</h1>
@@ -69,7 +79,7 @@ const BusinessVerticals = () => {
         <motion.div
           className="lg:w-3/4 relative"
           initial={{ opacity: 0, x: -100 }} // Start off-screen to the left
-          animate={{ opacity: 1, x: 0 }} // Slide to the original position
+          animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -100 }} // Trigger animation when in view
           transition={{ duration: 1.5, ease: "easeInOut" }} // Slower animation
         >
           <div className="flex items-center justify-between space-x-6">
@@ -88,8 +98,12 @@ const BusinessVerticals = () => {
                   key={index}
                   className="w-full md:w-1/3 relative group"
                   initial={{ opacity: 0, x: -100 }} // Start off-screen to the left
-                  animate={{ opacity: 1, x: 0 }} // Slide in
-                  transition={{ duration: 1.5, ease: "easeInOut" }} // Slower animation
+                  animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -100 }} // Trigger animation when in view
+                  transition={{
+                    duration: 1.5,
+                    ease: "easeInOut",
+                    delay: index * 0.2, // Staggered animation for each card
+                  }}
                 >
                   {/* Image */}
                   <div className="relative">
@@ -128,3 +142,4 @@ const BusinessVerticals = () => {
 };
 
 export default BusinessVerticals;
+

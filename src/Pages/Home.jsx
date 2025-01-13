@@ -14,7 +14,7 @@ function Home() {
     <Nav/>
     <Hero1/>
     <GravitaAbout/>
-    {/* <BusinessVerticals/> */}
+    <BusinessVerticals/>
     <LegacySection/>
     <Map/>
     <ESGSection/>

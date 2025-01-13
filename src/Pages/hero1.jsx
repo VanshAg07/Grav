@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion"; // Import motion for animation
+import { useInView } from "react-intersection-observer"; // Import Intersection Observer hook
 import image1 from "../img/1.jpg";
 import image2 from "../img/2.jpg";
 import image3 from "../img/3.jpeg";
@@ -12,6 +14,12 @@ const texts = [
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Intersection Observer hook to trigger animation when component is in view
+  const { ref, inView } = useInView({
+    triggerOnce: false, // Trigger animation only once when in view
+    threshold: 0.1, // Trigger when 10% of the element is in view
+  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,13 +45,28 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Text Section */}
-      <div className="absolute top-1/3 right-10 text-right text-white">
+      {/* Text Section with animation */}
+      <motion.div
+        ref={ref} // Attach the ref for intersection observer
+        className="absolute top-1/3 right-10 text-right text-white"
+        initial={{ y: 50, opacity: 0 }} // Start below and invisible
+        animate={{
+          y: inView ? 0 : 50, // Move up when in view
+          opacity: inView ? 1 : 0, // Fade in when in view
+        }}
+        transition={{ duration: 1, ease: "easeInOut" }} // Smooth transition
+      >
         <h1 className="text-5xl font-bold mb-4">{texts[currentIndex].title}</h1>
         <a href={texts[currentIndex].url}>
-          <button
+          <motion.button
             type="submit"
             className="flex justify-center gap-2 items-center mx-auto shadow-xl text-lg bg-blue-500 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-emerald-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
+            initial={{ y: 50, opacity: 0 }} // Start below and invisible
+            animate={{
+              y: inView ? 0 : 50, // Move up when in view
+              opacity: inView ? 1 : 0, // Fade in when in view
+            }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
           >
             <span className="mr-2">Read More</span>
             <svg
@@ -56,9 +79,9 @@ const HeroSection = () => {
                 className="fill-gray-800 group-hover:fill-gray-800"
               ></path>
             </svg>
-          </button>
+          </motion.button>
         </a>
-      </div>
+      </motion.div>
 
       {/* Counter Indicator */}
       <div className="absolute bottom-10 right-10 text-white">

@@ -3,6 +3,7 @@ import { Globe2, Recycle, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import WorldMapImage from "../img/1.webp";
+import { useInView } from "react-intersection-observer"; // Import the Intersection Observer hook
 
 function StatCard({ icon: Icon, number, label }) {
   // Parse the number string to get numeric value and suffix
@@ -10,7 +11,7 @@ function StatCard({ icon: Icon, number, label }) {
     const match = numStr.match(/(\d+)(\+?)/);
     return {
       value: parseInt(match[1]),
-      suffix: match[2] || ''
+      suffix: match[2] || '',
     };
   };
 
@@ -44,12 +45,18 @@ function StatCard({ icon: Icon, number, label }) {
 }
 
 function Map() {
+  // Intersection Observer hook
+  const { ref: sectionRef, inView } = useInView({
+    triggerOnce: false, // Trigger the animation once when the section is in view
+    threshold: 0.3, // Trigger when 50% of the section is visible
+  });
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-indigo-50">
+    <div ref={sectionRef} className="min-h-screen bg-gradient-to-b from-white to-indigo-50">
       <div className="max-w-7xl mx-auto px-4 pt-8 sm:pt-12 lg:pt-16 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -20 }} // Animation triggers when section comes into view
           transition={{ duration: 0.5 }}
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
@@ -64,26 +71,32 @@ function Map() {
 
         <div className="relative">
           {/* Map Container */}
-          <div className="relative w-full">
-            <img 
-              src={WorldMapImage} 
-              alt="World Map" 
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -100 }} // Animation triggers when section comes into view
+            transition={{ duration: 1 }}
+            className="relative w-full"
+          >
+            <img
+              src={WorldMapImage}
+              alt="World Map"
               className="w-full h-[50vh] sm:h-[60vh] lg:h-[70vh] object-contain"
             />
-            
+
             {/* Stats Overlay */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl px-4">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -20 }} // Animate the grid of stats when in view
+                transition={{ duration: 1 }}
+                className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+              >
                 <StatCard icon={Globe2} number="70+" label="Countries" />
                 <StatCard icon={Recycle} number="11" label="Recycling Plants" />
-                <StatCard
-                  icon={MapPin}
-                  number="1700+"
-                  label="Global Touchpoints"
-                />
-              </div>
+                <StatCard icon={MapPin} number="1700+" label="Global Touchpoints" />
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

@@ -4,7 +4,8 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import img2 from "../img/15.jpg";
 import img3 from "../img/16.png";
-
+import { motion } from "framer-motion"; // Import motion from framer-motion
+import { useInView } from "react-intersection-observer"; // Import the hook
 const OverviewSection = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -12,24 +13,32 @@ const OverviewSection = () => {
     setIsExpanded(!isExpanded);
   };
 
+
+  const { ref, inView } = useInView({
+    triggerOnce: false, // Keep triggering animation each time it comes into view
+    threshold: 0.2, // Trigger when 20% of the component is visible
+  });
+
   return (
     <>
       <Nav />
       <div className="relative h-[85vh] w-full">
-        {/* Background Image */}
-        <img
-          src={img2}
-          alt="contact"
-          className="w-full h-[80vh] object-cover"
-        />
-
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
-
-        {/* Heading */}
-        <div className="absolute bottom-5 left-5">
-          <h1 className="text-white text-7xl pl-12 pb-12 font-bold">About Us</h1>
-        </div>
+              {/* Background Image */}
+              <img src={img2} alt="contact" className="w-full h-[80vh] object-cover" />
+              
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+              
+              {/* Heading with Framer Motion for animation triggered by Intersection Observer */}
+              <motion.div
+                ref={ref} // Ref to trigger intersection observer
+                className="absolute bottom-5 left-5"
+                initial={{ y: -100 }} // Start above the screen
+                animate={{ y: inView ? 0 : -100 }} // Trigger animation when in view
+                transition={{ duration: 1, ease: "easeInOut" }} // Customize duration and easing
+              >
+                <h1 className="text-white text-7xl pl-12 pb-12 font-bold">About Us</h1>
+              </motion.div>
       </div>
 
       <div className="flex flex-wrap items-start justify-between bg-white py-10 px-8">
