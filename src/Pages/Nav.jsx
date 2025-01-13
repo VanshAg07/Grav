@@ -16,7 +16,7 @@ const Nav = () => {
       <div className="bg-purple-500 h-full container mx-auto px-4">
         <div className="h-full flex justify-around items-center">
           {/* Logo or Branding */}
-          <div className="text-xl font-bold">MyWebsite</div>
+          <a href='/'> <div className="text-xl font-bold">MyWebsite</div> </a>
 
           {/* Hamburger Menu Button - Only visible on mobile */}
           <button
