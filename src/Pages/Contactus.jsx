@@ -57,16 +57,13 @@ const ContactForm = () => {
     <>
       <Nav />
       <div className="relative h-[85vh] w-full">
-        {/* Background Image */}
-        <img src={img} alt="contact" className="w-full h-[80vh] object-cover" />
+        <img src={img} alt="contact" className="w-full h-[85vh] object-cover" />
         
-        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
         
-        {/* Heading with Framer Motion for animation triggered by Intersection Observer */}
         <motion.div
           ref={ref} // Ref to trigger intersection observer
-          className="absolute bottom-5 left-5"
+          className="absolute bottom-5 left-2"
           initial={{ y: -100 }} // Start above the screen
           animate={{ y: inView ? 0 : -100 }} // Trigger animation when in view
           transition={{ duration: 1, ease: "easeInOut" }} // Customize duration and easing
@@ -75,125 +72,125 @@ const ContactForm = () => {
         </motion.div>
 </div>
 
-<div className="flex flex-wrap bg-gray-100 p-10">
-      {/* Left Section - Form */}
+
+ <div className="flex flex-wrap bg-gray-100 p-10">
+      
       <motion.div
         ref={leftSectionRef} // Attach the ref to the left section
-        className="w-full md:w-1/2 bg-white p-8 md:shadow-lg md:rounded-lg md:border border-gray-200"
+        className="w-full md:w-1/2 bg-white p-8 md:rounded-lg  border-gray-200"
         initial={{ y: 100, opacity: 0 }} // Start below and invisible
         animate={{ y: leftInView ? 0 : 100, opacity: leftInView ? 1 : 0 }} // Animate only when in view
         transition={{ duration: 1.2, ease: "easeInOut" }} // Smooth animation
       >
         <h2 className="text-3xl font-semibold text-gray-800 mb-6">Get in touch</h2>
         <form>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
-                Full Name *
-              </label>
-              <input
-                type="text"
-                id="fullName"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 sm:text-sm p-3"
-                placeholder="Full name"
-              />
-            </div>
-            <div>
-              <label htmlFor="contactNumber" className="block text-sm font-medium text-gray-700 mb-2">
-                Contact number *
-              </label>
-              <input
-                type="text"
-                id="contactNumber"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 sm:text-sm p-3"
-                placeholder="Contact number"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                Email ID *
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 sm:text-sm p-3"
-                placeholder="E-mail Id"
-              />
-            </div>
-            <div>
-              <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">
-                Country *
-              </label>
-              <select
-                id="country"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 sm:text-sm p-3"
-              >
-                <option>Select country</option>
-                {/* Add country options here */}
-              </select>
-            </div>
-            <div>
-              <label htmlFor="organization" className="block text-sm font-medium text-gray-700 mb-2">
-                Organization *
-              </label>
-              <input
-                type="text"
-                id="organization"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 sm:text-sm p-3"
-                placeholder="Organization"
-              />
-            </div>
-            <div>
-              <label htmlFor="type" className="block text-sm font-medium text-gray-700 mb-2">
-                Select Type *
-              </label>
-              <select
-                id="type"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 sm:text-sm p-3"
-              >
-                <option>Select type</option>
-                {/* Add type options here */}
-              </select>
-            </div>
-          </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <div>
+      <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
+        Full Name *
+      </label>
+      <input
+        type="text"
+        id="fullName"
+        className="mt-1 w-full border-gray-900 rounded-md shadow-sm sm:text-sm p-3"
+        placeholder="Full name"
+      />
+    </div>
+    <div>
+      <label htmlFor="contactNumber" className="block text-sm font-medium text-gray-700 mb-2">
+        Contact number *
+      </label>
+      <input
+        type="text"
+        id="contactNumber"
+        className="mt-1 block w-full border-gray-400 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 sm:text-sm p-3"
+        placeholder="Contact number"
+      />
+    </div>
+    <div>
+      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+        Email ID *
+      </label>
+      <input
+        type="email"
+        id="email"
+        className="mt-1 block w-full border-gray-400 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 sm:text-sm p-3"
+        placeholder="E-mail Id"
+      />
+    </div>
+    <div>
+      <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">
+        Country *
+      </label>
+      <select
+        id="country"
+        className="mt-1 block w-full border-gray-400 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 sm:text-sm p-3"
+      >
+        <option>Select country</option>
+      </select>
+    </div>
+    <div>
+      <label htmlFor="organization" className="block text-sm font-medium text-gray-700 mb-2">
+        Organization *
+      </label>
+      <input
+        type="text"
+        id="organization"
+        className="mt-1 block w-full border-gray-400 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 sm:text-sm p-3"
+        placeholder="Organization"
+      />
+    </div>
+    <div>
+      <label htmlFor="type" className="block text-sm font-medium text-gray-700 mb-2">
+        Select Type *
+      </label>
+      <select
+        id="type"
+        className="mt-1 block w-full border-gray-400 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 sm:text-sm p-3"
+      >
+        <option>Select type</option>
+      </select>
+    </div>
+  </div>
 
-          <div className="mt-6">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-              Message
-            </label>
-            <textarea
-              id="message"
-              rows="4"
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 sm:text-sm p-3"
-              placeholder="Type your query here..."
-            ></textarea>
-          </div>
+  <div className="mt-6">
+    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+      Message
+    </label>
+    <textarea
+      id="message"
+      rows="4"
+      className="mt-1 block w-full border-gray-400 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 sm:text-sm p-3"
+      placeholder="Type your query here..."
+    ></textarea>
+  </div>
 
-          <div className="mt-4 flex items-start">
-            <input
-              type="checkbox"
-              id="agreement"
-              className="h-5 w-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
-            />
-            <label htmlFor="agreement" className="ml-2 text-sm text-gray-600">
-              By using this form you agree with the storage and handling of your data by this website in accordance with our Privacy Policy.
-            </label>
-          </div>
+  <div className="mt-4 flex items-start">
+    <input
+      type="checkbox"
+      id="agreement"
+      className="h-5 w-5 text-indigo-600 border-gray-400 rounded focus:ring-indigo-500"
+    />
+    <label htmlFor="agreement" className="ml-2 text-sm text-gray-600">
+      By using this form you agree with the storage and handling of your data by this website in accordance with our Privacy Policy.
+    </label>
+  </div>
 
-          <div className="mt-6">
-            <div className="g-recaptcha" data-sitekey="your-site-key"></div>
-          </div>
+  <div className="mt-6">
+    <div className="g-recaptcha" data-sitekey="your-site-key"></div>
+  </div>
 
-          <button
-            type="submit"
-            className="mt-6 w-full bg-indigo-600 text-white py-3 px-4 rounded-md shadow-lg hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-300"
-          >
-            Submit
-          </button>
-        </form>
+  <button
+    type="submit"
+    className="mt-6 w-full bg-indigo-600 text-white py-3 px-4 rounded-md shadow-lg hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-300"
+  >
+    Submit
+  </button>
+</form>
+
       </motion.div>
 
-      {/* Right Section - Business Verticals */}
+     
       <motion.div
         ref={rightSectionRef} // Attach the ref to the right section
         className="w-full h-[70vh] md:pt-20 md:w-1/2 bg-indigo-700 text-white p-8 rounded-lg shadow-lg"
@@ -235,7 +232,7 @@ const ContactForm = () => {
           </p>
         </div>
       </motion.div>
-    </div>
+    </div> 
     <Footer/>
     </>
   );

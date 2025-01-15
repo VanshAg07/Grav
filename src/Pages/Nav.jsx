@@ -13,7 +13,7 @@ const Nav = () => {
 
   return (
     <nav className="sticky h-16 top-0 z-50 text-white">
-      <div className="bg-purple-500 h-full container mx-auto px-4">
+      <div className="bg-purple-500 h-full  container mx-auto px-4">
         <div className="h-full flex justify-around items-center">
           {/* Logo or Branding */}
           <a href='/'> <div className="text-xl font-bold">MyWebsite</div> </a>
@@ -35,18 +35,21 @@ const Nav = () => {
             <Link to="/contactus" className="">
               Contact Us
             </Link>
-            <a href="#blog" className="">
+            <a href="/blog" className="">
               Blog
             </a>
-            <a href="#career" className="">
+            <a href="/carrer" className="">
               Career
             </a>
-           <div className="flex cursor-pointer items-center">
+            <a href="/esg" className="">
+              ESG
+            </a>
+           {/* <div className="flex cursor-pointer items-center">
               <IoIosSearch className="text-xl" />
               <a href="#search" className=" pl-2">
                 Search
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -72,20 +75,27 @@ const Nav = () => {
               Contact Us
             </Link>
             <a 
-              href="#blog" 
+              href="/blog" 
               className="hover:text-gray-300"
               onClick={() => setIsOpen(false)}
             >
               Blog
             </a>
             <a 
-              href="#career" 
+              href="/career" 
               className="hover:text-gray-300"
               onClick={() => setIsOpen(false)}
             >
               Career
             </a>
-            <div className="flex items-center">
+            <a 
+              href="/esg" 
+              className="hover:text-gray-300"
+              onClick={() => setIsOpen(false)}
+            >
+              ESG
+            </a>
+            {/* <div className="flex items-center">
               <IoIosSearch className="text-xl" />
               <a 
                 href="#search" 
@@ -94,7 +104,7 @@ const Nav = () => {
               >
                 Search
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
