@@ -9,7 +9,7 @@ import { motion } from "framer-motion"; // Import motion from framer-motion
 import { useInView } from "react-intersection-observer"; // Import the hook
 import Footer from "./Footer";
 
-const Carrer = () => {
+const Career = () => {
   const { ref, inView } = useInView({
     triggerOnce: false, // Keep triggering animation each time it comes into view
     threshold: 0.2, // Trigger when 20% of the component is visible
@@ -183,4 +183,4 @@ const Carrer = () => {
   );
 };
 
-export default Carrer;
+export default Career;

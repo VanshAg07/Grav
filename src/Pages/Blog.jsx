@@ -5,6 +5,8 @@ import { motion } from "framer-motion"; // Import motion from framer-motion
 import { useInView } from "react-intersection-observer"; // Import the hook
 import Footer from "./Footer";
 import Nav from "./Nav";
+import { Link } from "react-router-dom"; 
+
 
 const blogs = [
   {
@@ -40,8 +42,8 @@ const blogs = [
 ];
 
 const BlogCard = ({ image, title, link }) => (
-  <a href={link} target="_blank" rel="noopener noreferrer">
-    {/* Wrap the card in an anchor tag */}
+  <Link to="/blogd">
+    {/* Replace a with Link */}
     <div className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer">
       <img
         src={image}
@@ -53,7 +55,7 @@ const BlogCard = ({ image, title, link }) => (
         <h3 className="text-lg font-bold">{title}</h3>
       </div>
     </div>
-  </a>
+  </Link>
 );
 
 const BlogSection = () => {
