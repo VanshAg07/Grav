@@ -43,7 +43,6 @@ const blogs = [
 
 const BlogCard = ({ image, title, link }) => (
   <Link to="/blogd">
-    {/* Replace a with Link */}
     <div className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer">
       <img
         src={image}
