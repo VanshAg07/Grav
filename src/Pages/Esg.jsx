@@ -18,7 +18,7 @@ const Esg = () => {
         <img
           src={img2}
           alt="contact"
-          className="w-full h-[80vh] object-cover"
+          className="w-full h-[85vh] object-cover"
         />
 
         {/* Gradient Overlay */}
