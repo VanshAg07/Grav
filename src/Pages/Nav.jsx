@@ -12,8 +12,8 @@ const Nav = () => {
   };
 
   return (
-    <nav className="sticky h-16 top-0 z-50 text-white">
-      <div className="bg-purple-500 h-full  container mx-auto px-4">
+    <nav className="sticky h-16 top-0 z-50 w-full text-white">
+      <div className="bg-purple-500 h-full w-full mx-auto px-4">
         <div className="h-full flex justify-around items-center">
           {/* Logo or Branding */}
           <a href='/'> <div className="text-xl font-bold">MyWebsite</div> </a>
@@ -35,15 +35,15 @@ const Nav = () => {
             <Link to="/contactus" className="">
               Contact Us
             </Link>
-            <a href="/blog" className="">
+            <Link to="/blog" className="">
               Blog
-            </a>
-            <a href="/carrer" className="">
+            </Link>
+            <Link to="/carrer" className="">
               Career
-            </a>
-            <a href="/esg" className="">
+            </Link>
+            <Link to="/esg" className="">
               ESG
-            </a>
+            </Link>
            {/* <div className="flex cursor-pointer items-center">
               <IoIosSearch className="text-xl" />
               <a href="#search" className=" pl-2">
@@ -74,27 +74,27 @@ const Nav = () => {
             >
               Contact Us
             </Link>
-            <a 
-              href="/blog" 
+            <Link 
+              to="/blog" 
               className="hover:text-gray-300"
               onClick={() => setIsOpen(false)}
             >
               Blog
-            </a>
-            <a 
-              href="/career" 
+            </Link>
+            <Link 
+              to="/career" 
               className="hover:text-gray-300"
               onClick={() => setIsOpen(false)}
             >
               Career
-            </a>
-            <a 
-              href="/esg" 
+            </Link>
+            <Link 
+              to="/esg" 
               className="hover:text-gray-300"
               onClick={() => setIsOpen(false)}
             >
               ESG
-            </a>
+            </Link>
             {/* <div className="flex items-center">
               <IoIosSearch className="text-xl" />
               <a 

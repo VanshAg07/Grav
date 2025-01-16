@@ -13,12 +13,12 @@ const Esg = () => {
   return (
     <>
       <Nav />
-      <div className="relative h-[85vh] w-full">
+      <div className="relative h-[80vh] w-full">
         {/* Background Image */}
         <img
           src={img2}
           alt="contact"
-          className="w-full h-[85vh] object-cover"
+          className="w-full h-[80vh] object-cover"
         />
 
         {/* Gradient Overlay */}
@@ -115,7 +115,7 @@ const Esg = () => {
               alternative energy sources. Explore our commitment to a greener
               future for both the world and our thriving enterprise.
             </p>
-            <FaChevronRight className="bg-yellow-500 ml-80 p-2 text-4xl rounded-full" />
+            {/* <FaChevronRight className="bg-yellow-500 ml-80 p-2 text-4xl rounded-full" /> */}
           </div>
 
           <div className="bg-blue-100 p-6 rounded-lg shadow-md">
@@ -132,7 +132,7 @@ const Esg = () => {
               ensure that we uphold the highest standards of integrity and
               accountability.
             </p>
-            <FaChevronRight className="bg-yellow-500 ml-80 p-2 text-4xl rounded-full" />
+            {/* <FaChevronRight className="bg-yellow-500 ml-80 p-2 text-4xl rounded-full" /> */}
           </div>
 
           <div className="bg-blue-100 p-6 rounded-lg shadow-md">
@@ -151,7 +151,7 @@ const Esg = () => {
               Audit Committee, and our commitment to ethical governance for a
               resilient future.
             </p>
-            <FaChevronRight className="bg-yellow-500 ml-80 p-2 text-4xl rounded-full" />
+            {/* <FaChevronRight className="bg-yellow-500 ml-80 p-2 text-4xl rounded-full" /> */}
           </div>
         </div>
       </div>
