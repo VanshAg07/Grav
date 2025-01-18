@@ -24,7 +24,7 @@ function StatCard({ icon: Icon, number, label }) {
       transition={{ duration: 0.5 }}
       className="flex flex-col items-center space-y-2 p-4 hover:scale-105 transition-transform duration-300 bg-white/80 backdrop-blur-sm rounded-lg shadow-lg"
     >
-      <Icon className="w-6 sm:w-8 h-6 sm:h-8 text-indigo-600" />
+      <Icon className="w-6 sm:w-8 h-6 sm:h-8 text-[#002379]" />
       <motion.h3
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -60,10 +60,10 @@ function Map() {
           transition={{ duration: 0.5 }}
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-indigo-900 mb-4 sm:mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#002379] mb-4 sm:mb-6">
             Our Presence
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
+          <p className="text-base sm:text-lg lg:text-xl text-black max-w-2xl mx-auto px-4">
             Our network is spread across 70+ countries and we have a customer
             network in 38+ countries.
           </p>

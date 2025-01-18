@@ -56,7 +56,7 @@ const HeroSection = () => {
         }}
         transition={{ duration: 1, ease: "easeInOut" }} // Smooth transition
       >
-        <h1 className="text-5xl font-bold mb-4">{texts[currentIndex].title}</h1>
+        <h1 className="text-5xl text-[#002379] font-bold mb-4">{texts[currentIndex].title}</h1>
         <a href={texts[currentIndex].url}>
           <motion.button
             type="submit"

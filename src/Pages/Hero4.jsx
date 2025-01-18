@@ -108,8 +108,8 @@ const ESGSection = () => {
               <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {/* Text over the image */}
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 py-6">
-                  <h3 className="text-2xl text-left font-bold">{category.title}</h3>
-                  <p className="mt-2 text-left text-lg">{category.description}</p>
+                  <h3 className="text-2xl font-bold">{category.title}</h3>
+                  <p className="mt-2 text-lg">{category.description}</p>
                 </div>
               </div>
             </motion.div>

@@ -13,7 +13,7 @@ const Nav = () => {
 
   return (
     <nav className="sticky h-16 top-0 z-50 w-full text-white">
-      <div className="bg-purple-500 h-full w-full mx-auto px-4">
+      <div className="bg-[#002379] h-full w-full mx-auto px-4">
         <div className="h-full flex justify-around items-center">
           {/* Logo or Branding */}
           <a href='/'> <div className="text-xl font-bold">MyWebsite</div> </a>
@@ -55,7 +55,7 @@ const Nav = () => {
 
         {/* Mobile Menu - Slides from right */}
         <div
-          className={`lg:hidden fixed top-16 right-0 h-screen bg-purple-500 w-full transform transition-transform duration-300 ease-in-out ${
+          className={`lg:hidden fixed top-16 right-0 h-screen bg-[#002379] w-full transform transition-transform duration-300 ease-in-out ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           } shadow-lg`}
         >

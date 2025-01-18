@@ -41,11 +41,11 @@ const GravitaAbout = () => {
         transition={{ duration: 1.5 }}
         className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:-ml-32 bg-white p-6 rounded-lg shadow-md z-10 relative"
       >
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">About Gravita</h1>
-        <p className="text-lg font-semibold text-gray-600 mb-4">
+        <h1 className="text-3xl text-[#002379] font-bold mb-4">About Gravita</h1>
+        <p className="text-lg text-[#FF5F00] font-semibold mb-4">
           Enterprising Craftsmen, Innovative Solutions - We Make a Difference
         </p>
-        <p className="text-gray-700 mb-6">
+        <p className="text-black mb-6">
           Gravita has always been a value-driven organisation. These cherished
           values continue to direct our business and growth. The company is
           dedicated to recycling lead & lead products, plastic, and aluminium
