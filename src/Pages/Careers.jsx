@@ -43,7 +43,7 @@ const Career = () => {
         </motion.div>
       </div>
 
-      <h1 className="text-6xl pt-7 pb-4 text-center">
+      <h1 className="text-6xl text-[#002379] pt-7 pb-4 text-center">
         Why Choose a Career with Gravita?{" "}
       </h1>
       <div className="relative flex flex-col lg:flex-row items-center bg-gray-50 p-8 overflow-hidden">
@@ -58,7 +58,7 @@ const Career = () => {
 
         {/* Right Section: Text Content */}
         <div className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:-ml-16 bg-white p-6 rounded-lg shadow-md z-10 relative">
-          <h1 className="text-3xl font-bold text-gray-800 mb-4">
+          <h1 className="text-3xl text-[#002379] font-bold mb-4">
             Diversity, Inclusion and Equity
           </h1>
           <p className="text-gray-700 mb-6">
@@ -74,7 +74,7 @@ const Career = () => {
       <div className="relative flex flex-col lg:flex-row items-center bg-gray-50 p-8 overflow-hidden">
         {/* Left Section: Text Content */}
         <div className="w-full lg:w-1/2 mt-8 mb-7 lg:-mr-16 lg:mt-0  bg-white p-6 rounded-lg shadow-md z-10 relative">
-          <h1 className="text-3xl font-bold text-gray-800 mb-4">
+          <h1 className="text-3xl font-bold text-[#002379] mb-4">
           Talent Development
           </h1>
           <p className="text-gray-700 mb-6">
@@ -100,10 +100,10 @@ const Career = () => {
       <div className="bg-white w-full mx-auto py-16 px-8">
   {/* Title Section */}
   <div className="text-center mb-12">
-    <h2 className="text-4xl font-bold text-blue-600">
+    <h2 className="text-4xl font-bold text-[#002379]">
       We Live By Our Values
     </h2>
-    <p className="text-gray-600 mt-4">
+    <p className="text-black mt-4">
       When you join Gravity, you join a global Community. We ensure our
       team members have as many unforgettable moments as our wanderers.
     </p>
@@ -120,7 +120,7 @@ const Career = () => {
 
   {/* Text Section */}
   <div className="mt-4 md:mt-0 md:ml-4 text-center md:text-left">
-    <h3 className="text-xl font-bold text-blue-600">Innovation</h3>
+    <h3 className="text-xl font-bold text-[#002379]">Innovation</h3>
     <p className="text-gray-700 mt-2">
       We encourage creativity, innovation and continuous improvements.
       We are open to experimenting and creating things from scratch.
@@ -135,7 +135,7 @@ const Career = () => {
         <img src={img1} alt="Expressivity" className="w-16 h-16" />
       </div>
       <div className="ml-4 md:mt-0 md:ml-4 text-center md:text-left">
-        <h3 className="text-xl font-bold text-blue-600">
+        <h3 className="text-xl font-bold text-[#002379]">
           Embrace Expressivity
         </h3>
         <p className="text-gray-700">
@@ -151,7 +151,7 @@ const Career = () => {
         <img src={img3} alt="Diversity" className="w-16 h-16" />
       </div>
       <div className="mt-4 md:mt-0 md:ml-4 text-center md:text-left">
-        <h3 className="text-xl font-bold text-blue-600">Diversity & Inclusions</h3>
+        <h3 className="text-xl font-bold text-[#002379]">Diversity & Inclusions</h3>
         <p className="text-gray-700">
           We have people from different backgrounds and communities, all
           coming together to make Gravity what it is today. We celebrate
@@ -166,7 +166,7 @@ const Career = () => {
         <img src={img4} alt="Empowerment" className="w-16 h-16" />
       </div>
       <div className="ml-4 md:mt-0 md:ml-4 text-center md:text-left">
-        <h3 className="text-xl font-bold text-blue-600">Empowerment</h3>
+        <h3 className="text-xl font-bold text-[#002379]">Empowerment</h3>
         <p className="text-gray-700">
           We at Gravity empower our employees by giving them a platform
           to represent themselves and their work while rewarding them with

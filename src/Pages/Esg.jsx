@@ -39,9 +39,9 @@ const Esg = () => {
       <div className="bg-white min-h-screen mx-auto w-[90vw] flex flex-col items-center justify-center">
         <div className="flex flex-col md:flex-row items-center">
           <div className="mt-8 md:mt-0 md:mr-10 text-center md:text-left w-[80%] md:w-[50%]">
-            <h1 className="text-4xl font-bold text-gray-800">
+            <h1 className="text-4xl font-bold text-[#002379]">
               Moving Towards a{" "}
-              <span className="text-green-500 bg-green-200 px-1">
+              <span className="text-white bg-green-500 px-1">
                 Sustainable
               </span>{" "}
               Future
@@ -77,14 +77,14 @@ const Esg = () => {
           </div>
 
           <div className="mt-8 md:mt-0 md:ml-10 text-center md:text-left w-[80%] md:w-[50%]">
-            <h1 className="text-4xl font-bold text-gray-800">
+            <h1 className="text-4xl font-bold text-[#002379]">
               Integrating{" "}
-              <span className="text-green-500 bg-green-200 px-1">
+              <span className="text-white bg-green-500 px-1">
                 Sustainability
               </span>{" "}
               into
             </h1>
-            <h1 className="text-4xl font-bold text-gray-800">Our Approach</h1>
+            <h1 className="text-4xl font-bold text-[#002379]">Our Approach</h1>
 
             <p className="mt-4 text-gray-600">
               Our company prioritises ESG (environment, social, governance)
@@ -100,7 +100,7 @@ const Esg = () => {
       <div className="bg-white min-h-screen mx-auto w-[90vw] py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-blue-100 p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Environmental
             </h2>
             <img
@@ -119,7 +119,7 @@ const Esg = () => {
           </div>
 
           <div className="bg-blue-100 p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Social</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Social</h2>
             <img
               src={img2} // Replace with the path to your social image
               alt="Social"
@@ -136,7 +136,7 @@ const Esg = () => {
           </div>
 
           <div className="bg-blue-100 p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Governance
             </h2>
             <img
